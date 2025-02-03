@@ -1,13 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Noefolio</title>
   </head>
+
   <body>
     <div id="root"></div>
+    <div id="stars"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("stars", {
+        particles: {
+          number: { value: 150, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: {
+            value: 0.8,
+            random: true,
+            anim: { enable: true, speed: 1, opacity_min: 0.3, sync: false },
+          },
+          size: { value: 2, random: true },
+          move: {
+            enable: true,
+            speed: 0.2,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+          },
+          line_linked: { 
+            enable: false
+          }
+        },
+      });
+    </script>
   </body>
 </html>
