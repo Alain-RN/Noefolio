@@ -1,0 +1,27 @@
+.banniere {
+    max-width: 70vw;
+    margin-inline: auto;
+    padding-block: 28px;
+    display: flex;
+}
+
+.accroche {
+    width: 55%;
+}
+
+
+.cercel-container {
+    width: 45%;
+    /* background: #000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cercle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #f1ef6e;
+    margin-block: auto;
+}

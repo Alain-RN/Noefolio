@@ -1,0 +1,24 @@
+.navbar {
+    padding-block: 24px;
+    display: flex;
+    /* background: #000; */
+    max-width: 70vw;
+    margin-inline: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 82px;
+}
+
+.logo span {
+    font-family: 'Audiwide';
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}

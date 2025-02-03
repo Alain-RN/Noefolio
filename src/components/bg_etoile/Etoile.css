@@ -1,0 +1,13 @@
+@keyframes moveRandom {
+    0% {
+      transform: scale(0.7);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+  }
+  
+.etoile {
+    animation: moveRandom 3s infinite ease alternate;
+}

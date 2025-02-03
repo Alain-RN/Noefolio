@@ -1,9 +1,36 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url("./assets/fonts/orbitron.ttf");
+
+}
+
+@font-face {
+  font-family: "Funnel";
+  src: url("./assets/fonts/funnel.ttf");
+}
+
+@font-face {
+  font-family: "Audiwide";
+  src: url("./assets/fonts/Audiowide.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;
+  color: #ffffff;
 }
 
-:root {
-  background: #000724;
+h1 {
+  font-family: "Audiwide";
+  font-size: 48px;
+}
+
+p {
+  font-family: "funnel";
+  font-size: 20px;
+}
+
+:root { 
+  background: #00061f;
   position: relative;
 }

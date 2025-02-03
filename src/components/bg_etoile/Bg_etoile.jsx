@@ -8,7 +8,7 @@ export default function Bg_etoile() {
     return (
         <div className="etoile-bg" ref={ref_bg}>
             {
-                [...Array(200)].map( (index) => (
+                [...Array(180)].map( (index) => (
                     <Etoile key={index} />
                  ) )
             }
