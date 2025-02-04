@@ -1,16 +1,14 @@
-import React, { useRef } from 'react'
 import "./Bg_etoile.css"
-import { useEffect } from 'react'
 import Etoile from './Etoile'
 
 export default function Bg_etoile() {
-    const ref_bg = useRef(null)
+    const etoiles = Array.from({ length: 180 });
     return (
-        <div className="etoile-bg" ref={ref_bg}>
+        <div className="etoile-bg">
             {
-                [...Array(180)].map( (index) => (
+                etoiles.map( ( _, index) =>
                     <Etoile key={index} />
-                 ) )
+                )
             }
         </div>
     )
