@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import {useEffect, useRef } from "react";
-
+import "./AnimationH1.css"
 
 export const AnimationH1 = ({ text, delay = 110 }) => {
 
@@ -15,12 +15,11 @@ export const AnimationH1 = ({ text, delay = 110 }) => {
     const animateText = () => {
       if (index < text.length) {
         currentText += text[index];
-        ref.current.innerHTML = `${currentText}<span>_<span/>`;
-        index++;
+        ref.current.innerHTML = `${currentText}<span ${(index + 1 == text.length)?"class='curseur'":""}>_<span/>`;
+        index++;index < text.length
         setTimeout(animateText, delay);
       }
     };
-
     animateText();
   }, [text, delay]);
 

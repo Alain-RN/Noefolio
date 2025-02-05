@@ -1,7 +1,19 @@
+/* eslint-disable react/no-unknown-property */
 import "./Banniere.css";
 import { AnimationH1 } from "../Animation/AnimationH1";
+import { Canvas } from "@react-three/fiber";
+// import Fusee3D from "../Model3D/Fusee3D";
+import * as THREE from 'three'
 
 export default function Banniere() {
+
+  const sphere = new THREE.SphereGeometry(2, 32, 32)
+  const sphereColor = new THREE.MeshBasicMaterial({
+    color: "yellow",
+    emissive: new THREE.Color("yellow"),
+    emissiveIntensity: 1          
+  })
+
   return (
     <div className="banniere">
       <div className="accroche">
@@ -17,8 +29,15 @@ export default function Banniere() {
         <a href="#projects">Explorer mes projets</a>
       </div>
       <div className="cercel-container">
-        <div className="cercle">
+        {/* <div className="cercle">
 
+        </div> */}
+        <div className="scene">
+          <Canvas camera={{ position: [0, 4, 0], near: 0.1, far: 1000 }}>
+            <ambientLight intensity={0.1} />
+            <directionalLight position={[0, 0, 5]} />
+            <mesh geometry={sphere}  material={sphereColor}/>
+          </Canvas>
         </div>
       </div>
     </div>
