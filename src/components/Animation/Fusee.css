@@ -1,13 +1,10 @@
 @keyframes decolage {
-    50% {
-        bottom: 120px;
-    }
-    100% {
-        bottom: 60px;
+   100% {
+        bottom: 61.5%;
     }
 }
 
-@keyframes acceleration {
+/* @keyframes acceleration {
     0% {
         bottom: 60px;
     }
@@ -15,7 +12,21 @@
     100% {
         bottom: 100%;
     }
+} */
+
+@keyframes stable {
+
+    to {
+        bottom: 60%;
+    }
 }
+
+@keyframes leave {
+    100% {
+        bottom: 100%;
+    }
+}
+
 
 .fusee-container {
     width: fit-content;
@@ -23,11 +34,11 @@
     position: fixed;
     left: 50vw;
     bottom: -110px;
-    transform: translateX(-50px);
-    animation: decolage 2.5s ease-in-out alternate, acceleration 0.6s 2.5s ease-in-out alternate;
+    transform: translateX(-30px);
+    animation: decolage 2.8s ease-in-out forwards, stable 0.6s 2.8s ease-in-out alternate infinite, leave 0.8s 8s ease-in-out forwards;
 }
 
 .fusee {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }

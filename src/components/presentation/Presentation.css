@@ -1,0 +1,45 @@
+.presentation-container {
+    top: 0;
+    position: fixed;
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.terminal-text {
+    /* background: white; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    display: inline-block;
+    /* opacity: 0; */
+}
+
+.text1 {
+    font-size: 2em;
+    opacity: 0;
+    animation: textAnimation 2s 6s ease-in-out forwards;
+}
+
+.text2 {
+    font-size: 2em;
+    opacity: 0;
+    animation: textAnimation 2s 8s ease-in-out forwards;
+}
+
+@keyframes textAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

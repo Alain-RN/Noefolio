@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOEFOLIO - Mission Web</title>
+    <style>
+        /* Mise en page de base */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0c0c0c; /* Fond sombre */
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Effet de fond avec étoiles */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-linen.png');
+            opacity: 0.2;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        /* Contenu principal */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Animation de la fusée (carré) */
+        #rocket {
+            width: 30px;
+            height: 30px;
+            background-color: #ff6347; /* Fusée rouge */
+            position: absolute;
+            bottom: -50px; /* Fusée cachée au départ */
+            left: 50%;
+            margin-left: -15px; /* Centrer la fusée */
+            animation: launch 5s ease-in-out forwards;
+        }
+
+        /* Texte qui s'affiche progressivement */
+        .text {
+            opacity: 0;
+            font-size: 1.5rem;
+            animation: textAnimation 2s ease-in-out forwards;
+            animation-delay: 2s;
+        }
+
+        /* Animation du texte */
+        @keyframes textAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Animation du lancement de la fusée */
+        @keyframes launch {
+            0% {
+                bottom: -50px;
+            }
+            100% {
+                bottom: 60%;
+            }
+        }
+
+        /* Animation du texte terminal */
+        .terminal-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            display: inline-block;
+            opacity: 0;
+        }
+
+        /* Animation du texte "saisie" */
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Animation de la présentation */
+        .presentation-text {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: textAnimation 2s ease-in-out forwards;
+            animation-delay: 12s; /* Présentation après les autres animations */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Fond étoilé -->
+    <div class="stars"></div>
+
+    <!-- Contenu principal -->
+    <div class="content">
+        <!-- Texte du terminal -->
+        <div class="terminal-text" id="terminal"></div>
+        <div class="text" id="greeting">👨‍🚀 Bonjour, ici le Capitaine en mission.</div>
+        <div class="text" id="message">Prêt à explorer l'infini du développement web ?</div>
+
+        <!-- Texte de présentation avec le nom, prénom et spécialité -->
+        <div class="presentation-text" id="presentation">Je suis [Ton Prénom] [Ton Nom], Développeur Web spécialisé en [ta spécialité].</div>
+    </div>
+
+    <!-- Fusée carrée (représentant la fusée) -->
+    <div id="rocket"></div>
+
+    <script>
+        // Animation du texte dans le style terminal
+        const terminalText = document.getElementById('terminal');
+        const messages = [
+            "Système en ligne...",
+            "Vérification des communications...",
+            "Message reçu depuis la station NOEFOLIO..."
+        ];
+
+        let index = 0;
+
+        function typeMessage() {
+            if (index < messages.length) {
+                terminalText.textContent = messages[index];
+                terminalText.style.animation = "typing 3s steps(" + messages[index].length + ") 1s forwards";
+                terminalText.style.opacity = 1;
+                index++;
+                setTimeout(typeMessage, 4000); // Delai avant d'afficher le prochain message
+            }
+        }
+
+        // Commence l'animation du texte terminal
+        typeMessage();
+
+        // Ajouter un délai pour que le texte de présentation disparaisse
+        setTimeout(function() {
+            document.getElementById('greeting').style.opacity = '0';
+        }, 7000); // Disparition après 7 secondes (temps que tous les messages s'affichent)
+
+        // Affichage progressif du message
+        setTimeout(function() {
+            document.getElementById('message').style.opacity = '1';
+        }, 8000); // Affichage du message après 8 secondes
+
+        // Affichage de la présentation après les autres animations
+        setTimeout(function() {
+            document.getElementById('presentation').style.opacity = '1';
+        }, 12000); // Présentation après 12 secondes
+
+    </script>
+
+</body>
+</html>
