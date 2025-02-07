@@ -1,0 +1,32 @@
+.terminal-text {
+    /* background: white; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    display: inline-block;
+    /* animation: typing 3s steps(20) forwards; */
+    /* opacity: 0; */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .terminal-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 496px) {
+    .terminal-text {
+        font-size: 0.8rem;
+    }
+}
