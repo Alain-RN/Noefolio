@@ -1,0 +1,12 @@
+.competence-container {
+    max-width: 70vw;
+    /* background:rgb(255, 255, 255); */
+    margin-inline: auto;
+
+}
+
+.langage-slide {
+    display: flex;
+    gap: 16px;
+    overflow-x: scroll;
+}

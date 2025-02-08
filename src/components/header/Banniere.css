@@ -3,6 +3,8 @@
     margin-inline: auto;
     padding-block: 48px;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .accroche {
@@ -11,7 +13,7 @@
 
 
 .cercel-container {
-    width: 45%;
+    width: 400px;
     /* background: #000; */
     /* background: #f1ef6e; */
     display: flex;
