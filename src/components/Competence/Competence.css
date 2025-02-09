@@ -9,4 +9,6 @@
     display: flex;
     gap: 16px;
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }

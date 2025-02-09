@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import "./CardSkills.css"
-export default function CardSkills({ nom, image, level }) {
+export default function CardSkills({ nom, image, level, ...props }) {
   return (
-    <div className="card-skills">
+    <div className="card-skills" {...props}>
         <img src={image} alt={nom} />
         <h3>{nom + " " + level + '%'}</h3>
     </div>
