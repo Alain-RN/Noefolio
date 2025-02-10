@@ -8,13 +8,43 @@ export default function Competence() {
 
   const sliderRef = useRef(null);
 
+
+  const elementWidth = 130;
+  const gap = 16;           
+
+
   const handleNext = () => {
-    sliderRef.current.scrollBy({ left: 10, behavior: "smooth" });
+    if (sliderRef.current) {
+      // Calculer la largeur de chaque élément + gap
+      const scrollAmount = elementWidth + gap;
+      const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+
+      // Si nous ne sommes pas à la fin, faire défiler
+      if (sliderRef.current.scrollLeft < maxScroll) {
+        sliderRef.current.scrollBy({
+          left: scrollAmount,
+          behavior: "smooth",  // Défilement fluide
+        });
+      }
+    }
   };
 
+  // Fonction pour faire défiler vers la gauche
   const handlePrev = () => {
-    sliderRef.current.scrollBy({ left: -10, behavior: "smooth" });
+    if (sliderRef.current) {
+      // Calculer la largeur de chaque élément + gap
+      const scrollAmount = elementWidth + gap;
+
+      // Si nous ne sommes pas au début, faire défiler
+      if (sliderRef.current.scrollLeft > 0) {
+        sliderRef.current.scrollBy({
+          left: -scrollAmount,
+          behavior: "smooth",  // Défilement fluide
+        });
+      }
+    }
   };
+
 
   return (
     <div className="competence-container">

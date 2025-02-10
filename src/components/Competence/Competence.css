@@ -1,20 +1,24 @@
 .competence-container {
     max-width: 70vw;
-    /* background:rgb(255, 255, 255); */
     margin-inline: auto;
-
 }
 
 .langage-container {
     position: relative;
 }
 
+
+/* Boutons de navigation */
 .langage-container input {
     height: 40px;
     width: 40px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 
 .competence-container input:last-child {
@@ -27,10 +31,8 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scrollbar-color: smooth;
     scrollbar-width: none;
 }
-
 
 .langage-slider::-webkit-scrollbar {
     display: none;
