@@ -1,48 +1,38 @@
 import "./Competence.css"
 import { skills } from "./Data_skills"
 import CardSkills from "./CardSkills"
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react";
+
 
 export default function Competence() {
 
-    const containerRef = useRef(null);
-    const [centerIndex, setCenterIndex] = useState(0);
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        if (!containerRef.current) return;
-  
-        const container = containerRef.current;
-        const scrollX = container.scrollLeft;
-        const itemWidth = container.scrollWidth / items.length;
-        const center = scrollX + container.offsetWidth / 2;
-        const index = Math.round(center / itemWidth);
-  
-        setCenterIndex(index);
-      };
-  
-      const container = containerRef.current;
-      container.addEventListener("scroll", handleScroll);
-      return () => container.removeEventListener("scroll", handleScroll);
-    }, []);
-  
+  const sliderRef = useRef(null);
+
+  const handleNext = () => {
+    sliderRef.current.scrollBy({ left: 10, behavior: "smooth" });
+  };
+
+  const handlePrev = () => {
+    sliderRef.current.scrollBy({ left: -10, behavior: "smooth" });
+  };
 
   return (
     <div className="competence-container">
-        <h2 className="competence-title">Competence</h2>
-        <div className="langage">
-            <h2>Langage de programation</h2>
-            <div className="langage-slide" id="langage-slide" ref={containerRef}>
-                {
-                    skills.map((skill, index) => (
-                        <CardSkills key={index} nom={skill.name} image={skill.image} level={skill.level} style={{
-                            transform: `scale(${index === centerIndex ? 1.2 : 1})`,
-                            transition: "transform 0.3s ease-in-out",
-                        }}/>
-                    ))
-                }
-            </div>
+      <h2 className="competence-title">Competence</h2>
+      <div className="langage" >
+        <h2>Langage de programation</h2>
+        <div className="langage-container">
+          <input type="button" value="<" onClick={handlePrev}/>
+          <div className="langage-slider" id="langage-slider" ref={sliderRef}>
+            {
+              skills.map((skill, index) => (
+                <CardSkills key={index} nom={skill.name} image={skill.image} level={skill.level} />
+              ))
+            }
+          </div>
+          <input type="button" value=">" onClick={handleNext}/>
         </div>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 .card-skills {
     min-width: 140px;
+    scroll-snap-align: center;
     /* background: rebeccapurple; */
 }

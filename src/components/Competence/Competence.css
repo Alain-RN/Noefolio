@@ -5,10 +5,33 @@
 
 }
 
-.langage-slide {
+.langage-container {
+    position: relative;
+}
+
+.langage-container input {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.competence-container input:last-child {
+    right: 0;
+}
+
+.langage-slider {
     display: flex;
     gap: 16px;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scrollbar-color: smooth;
+    scrollbar-width: none;
+}
+
+
+.langage-slider::-webkit-scrollbar {
+    display: none;
 }

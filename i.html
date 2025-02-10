@@ -104,11 +104,47 @@
             animation: textAnimation 2s ease-in-out forwards;
             animation-delay: 12s; /* Présentation après les autres animations */
         }
+        .slider {
+    width: 300px; /* 3 éléments visibles (100px * 3) */
+    overflow: hidden;
+    border: 2px solid black;
+    touch-action: pan-x; /* Permet le swipe horizontal */
+}
+
+.slide-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Effet Smooth */
+}
+
+.slide {
+    width: 100px; /* Chaque élément fait 100px */
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
 
     </style>
 </head>
 <body>
-
+    <div class="slider">
+        <div class="slide-container">
+            <div class="slide">1</div>
+            <div class="slide">2</div>
+            <div class="slide">3</div>
+            <div class="slide">4</div>
+            <div class="slide">5</div>
+            <div class="slide">6</div>
+        </div>
+    </div>
+    
+    <button id="prevBtn">⬅ Précédent</button>
+    <button id="nextBtn">Suivant ➡</button>
+    
     <!-- Fond étoilé -->
     <div class="stars"></div>
 
@@ -164,6 +200,51 @@
         setTimeout(function() {
             document.getElementById('presentation').style.opacity = '1';
         }, 12000); // Présentation après 12 secondes
+        const slideContainer = document.querySelector(".slide-container");
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let i = 0;
+const totalSlides = slides.length;
+const elementWidth = 100; // Largeur d'un seul élément
+
+// Fonction pour changer de slide
+function moveSlide(newIndex) {
+    if (newIndex < 0) {
+        i = totalSlides - 3; // Retour à la fin
+    } else if (newIndex > totalSlides - 3) {
+        i = 0; // Retour au début
+    } else {
+        i = newIndex;
+    }
+    slideContainer.style.transform = `translateX(-${i * elementWidth}px)`;
+}
+
+// Gestion des boutons
+nextBtn.addEventListener("click", () => moveSlide(i + 1));
+prevBtn.addEventListener("click", () => moveSlide(i - 1));
+
+// Gestion du swipe tactile
+let startX = 0;
+let endX = 0;
+
+slideContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+slideContainer.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+});
+
+slideContainer.addEventListener("touchend", () => {
+    let diff = startX - endX;
+    if (diff > 50) {
+        moveSlide(i + 1); // Swipe gauche -> slide suivant
+    } else if (diff < -50) {
+        moveSlide(i - 1); // Swipe droite -> slide précédent
+    }
+});
 
     </script>
 
