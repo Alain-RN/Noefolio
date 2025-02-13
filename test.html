@@ -33,22 +33,25 @@
             padding: 0;
             margin: 0;
             background: #000;
-            width: 200px;
+            width: 600px;
             height: 200px;
             display: flex;
             overflow: hidden;
             overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth; /* Animation fluide */
             /* scrollbar-width: none; */
         }
         img {
             background: red;
             width: 200px;
             height: 200px;
+            flex: 0 0 200px;
+            scroll-snap-align: start;
         }
     </style>
 </head>
 <body>
-    <h1>Len: </h1>
     <div class="slider-container">
 
         <input type="button" value="<" class="l">
@@ -57,22 +60,31 @@
         <div class="slider">
             <img src="/public/images/css.svg" alt="">
             <img src="/public/images/html.svg" alt="">
+            <img src="/public/images/javascript.svg" alt="">
+            <img src="/public/images/typescript.svg" alt="">
+            <img src="/public/images/react.svg" alt="">
+            <img src="/public/images/jetpackcompose.svg" alt="">
         </div>
     </div>
     <script>
         const slider = document.querySelector('.slider');
         const leftBtn = document.querySelector('.l');
         const rightBtn = document.querySelector('.r');
+        const n_img = document.getElementsByTagName("img").length;
+        
+        let s = 200;
         // console.log(imgs.length)
         leftBtn.addEventListener('click',()=> {
-            slider.scrollTo({
-                left : 0,
+
+            slider.scrollBy({ 
+                left : -s,
                 behavior : "smooth"
             })
         })
-        rightBtn.addEventListener('click',()=> {
-            slider.scrollTo({
-                left : 200,
+
+        rightBtn.addEventListener('click',(t)=> {
+            slider.scrollBy({
+                left : s,
                 behavior : "smooth"
             })
         })
