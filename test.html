@@ -12,6 +12,8 @@
             position: relative;
         }
         input {
+            top: 50%;
+            transform: translateY(-50%);
             background: #e2e2e2;
             width: 30px;
             height: 30px;
@@ -21,29 +23,36 @@
             cursor: pointer;
             position: absolute;
         }
+        .r {
+            right: -12px;
+        }
+        .l {
+            left: -12px;
+        }
         .slider {
             padding: 0;
             margin: 0;
             background: #000;
             width: 200px;
             height: 200px;
-            white-space: nowrap;
+            display: flex;
             overflow: hidden;
             overflow-x: auto;
-            scrollbar-width: none;
+            /* scrollbar-width: none; */
         }
         img {
+            background: red;
             width: 200px;
             height: 200px;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <h1>Len: </h1>
     <div class="slider-container">
 
-        <input type="button" value="<" >
-        <input type="button" value=">">
+        <input type="button" value="<" class="l">
+        <input type="button" value=">" class="r">
 
         <div class="slider">
             <img src="/public/images/css.svg" alt="">
@@ -51,7 +60,22 @@
         </div>
     </div>
     <script>
-
+        const slider = document.querySelector('.slider');
+        const leftBtn = document.querySelector('.l');
+        const rightBtn = document.querySelector('.r');
+        // console.log(imgs.length)
+        leftBtn.addEventListener('click',()=> {
+            slider.scrollTo({
+                left : 0,
+                behavior : "smooth"
+            })
+        })
+        rightBtn.addEventListener('click',()=> {
+            slider.scrollTo({
+                left : 200,
+                behavior : "smooth"
+            })
+        })
     </script>
 </body>
 </html>
