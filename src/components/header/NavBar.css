@@ -1,7 +1,6 @@
 .navbar {
     padding-block: 32px;
     display: flex;
-    /* background: #000; */
     max-width: var(--max-width);
     margin-inline: auto;
     display: flex;
@@ -17,6 +16,7 @@
 
 .logo img {
     width: 82px;
+    background: rebeccapurple;
 }
 
 .logo span {
@@ -42,5 +42,15 @@
 }
 
 @media (max-width: 472px) {
+    .logo span {
+        font-size: 20px;
+    }
 
+    .logo img {
+        width: 60px;
+    }
+    
+    .profil img {
+        width: 36px;
+    }
 }
