@@ -15,7 +15,7 @@ export default function Banniere() {
   })
 
   return (
-    <div className="banniere">
+    <div className="e banniere">
       <div className="accroche">
         <AnimationH1 text="Prêt à explorer l'infini du développement web ?"></AnimationH1>
         {/* <h1>Prêt à explorer l'infini du développement web ?</h1> */}

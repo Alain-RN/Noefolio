@@ -1,39 +1,42 @@
-.competence-container {
-    max-width: 70vw;
+.skill-container {
+    max-width: var(--max-width);
     margin-inline: auto;
 }
 
-.langage-container {
+.skill-slider-container {
     position: relative;
-}
-
-
-/* Boutons de navigation */
-.langage-container input {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-}
-
-.competence-container input:last-child {
-    right: 0;
-}
-
-.langage-slider {
+    /* background: rebeccapurple; */
     display: flex;
-    gap: 16px;
-    overflow-x: auto;
+    justify-content: center;
+}
+
+.skill-slider {
+    border-radius: 4px;
+    max-width: calc(144px * 8 + 8px * 7);
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     scrollbar-width: none;
 }
 
-.langage-slider::-webkit-scrollbar {
-    display: none;
+.b {
+    color: #FFFFFF; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    position: absolute;
+    width: auto;
+    top : 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.l {
+    left: 0;
+}
+
+.r {
+    right: 0;
 }

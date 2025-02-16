@@ -35,6 +35,7 @@ p {
 }
 
 :root { 
+  --max-width : 1278px;
   background: #000311;
   position: relative;
 }

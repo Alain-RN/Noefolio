@@ -19,7 +19,7 @@ export default function Bg_etoile() {
         } else {
             setNbrEtoile(180);
         }
-        console.log(ecran)
+        // console.log(ecran)
 
         return () => {
             window.removeEventListener('resize', handleEcran)

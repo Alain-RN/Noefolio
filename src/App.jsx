@@ -13,6 +13,7 @@ function App() {
       <NavBar></NavBar>
       <Banniere></Banniere>
       <Competence></Competence>
+
       {/* <Presentation></Presentation> */}
       <Bg_etoile></Bg_etoile>
     </div>

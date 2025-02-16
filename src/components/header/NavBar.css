@@ -2,7 +2,7 @@
     padding-block: 32px;
     display: flex;
     /* background: #000; */
-    max-width: 70vw;
+    max-width: var(--max-width);
     margin-inline: auto;
     display: flex;
     align-items: center;

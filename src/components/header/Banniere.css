@@ -1,5 +1,5 @@
 .banniere {
-    max-width: 70vw;
+    max-width: var(--max-width);
     margin-inline: auto;
     padding-block: 48px;
     display: flex;

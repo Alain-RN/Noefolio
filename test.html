@@ -33,22 +33,23 @@
             padding: 0;
             margin: 0;
             background: #000;
-            width: 600px;
+            width: 860px;
             height: 200px;
             display: flex;
+            gap: 20px;
             overflow: hidden;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            scroll-behavior: smooth; /* Animation fluide */
+            scroll-behavior: smooth;
             /* scrollbar-width: none; */
         }
         img {
-            background: red;
             width: 200px;
             height: 200px;
             flex: 0 0 200px;
             scroll-snap-align: start;
         }
+
     </style>
 </head>
 <body>
@@ -64,6 +65,10 @@
             <img src="/public/images/typescript.svg" alt="">
             <img src="/public/images/react.svg" alt="">
             <img src="/public/images/jetpackcompose.svg" alt="">
+            <img src="/public/images/jetpackcompose.svg" alt="">
+            <img src="/public/images/jetpackcompose.svg" alt="">
+            <img src="/public/images/jetpackcompose.svg" alt="">
+
         </div>
     </div>
     <script>
@@ -71,6 +76,14 @@
         const leftBtn = document.querySelector('.l');
         const rightBtn = document.querySelector('.r');
         const n_img = document.getElementsByTagName("img").length;
+
+        b_s.addEventListener("click", ()=>{
+            test.scrollBy({
+                left: -500, 
+                behavior: "smooth" 
+            });
+        })
+        
         
         let s = 200;
         // console.log(imgs.length)
