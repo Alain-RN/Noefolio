@@ -32,10 +32,55 @@ h2 {
 p {
   font-family: "funnel";
   font-size: 20px;
+  text-align: justify;
+  hyphens: auto;
 }
 
 :root { 
+  --show-n-item : 8;
   --max-width : 1278px;
+  --h1 : 42px;
   background: #000311;
   position: relative;
+}
+
+@media (max-width: 1650px) {
+  :root {
+    --max-width : 1110px;
+    --show-n-item : 7;
+  }
+}
+
+@media (max-width: 1455px) {
+  :root {
+    --max-width : 1000px;
+    --show-n-item : 6;
+  }
+}
+
+@media (max-width: 1220px) {
+  :root {
+    --max-width : 850px;
+    --show-n-item : 5;
+  }
+}
+
+@media (max-width: 810px) {
+  :root {
+    --show-n-item : 4;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --show-n-item : 2;
+    --h1 : 28px
+  }
+}
+
+@media (max-width: 412px) {
+  :root {
+    --show-n-item : 2;
+    --h1 : 30px
+  }
 }

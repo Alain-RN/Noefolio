@@ -2,19 +2,29 @@ import "./Competence.css"
 import { skills } from "./Data_skills"
 import CardSkills from "./CardSkills"
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 
 
 
 export default function Competence() {
 
   const refSlider = useRef(null);
+  const by = 144;
 
-  useEffect(() => {
-    if(!refSlider.current) {
-      alert("aaaaa")
-    }
-  }, [])
+  const handleButtonLeft = ()=> {
+    refSlider.current.scrollBy({ 
+      left : -by,
+      behavior : "smooth"
+    } )
+  }
+
+  const handleButtonRight = ()=> {
+    refSlider.current.scrollBy({ 
+      left : by,
+      behavior : "smooth"
+    } )
+  }
+
 
   return (
     <div className="e skill-container">
@@ -22,8 +32,8 @@ export default function Competence() {
       <div className="skill" >
         <h2>Langage de programation</h2>
         <div className="skill-slider-container">
-          <BiChevronLeft className="b l" size={28}/>
-          <BiChevronRight className="b r" size={28}/>
+          <BiChevronLeft className="b l" size={28} onClick={handleButtonLeft}/>
+          <BiChevronRight className="b r" size={28} onClick={handleButtonRight}/>
           <div className="skill-slider" id="skill-slider" ref={refSlider}>
             {
               skills.map((skill, index) => (

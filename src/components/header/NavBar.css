@@ -40,3 +40,7 @@
     box-shadow: white 2px 1.8px 0;
     cursor: pointer;
 }
+
+@media (max-width: 472px) {
+
+}

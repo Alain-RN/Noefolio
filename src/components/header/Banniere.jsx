@@ -28,7 +28,7 @@ export default function Banniere() {
         </p>
         <a href="#projects">Explorer mes projets</a>
       </div>
-      <div className="cercel-container">
+      <div className="scene-container">
         {/* <div className="cercle">
 
         </div> */}

@@ -11,8 +11,7 @@
     width: 55%;
 }
 
-
-.cercel-container {
+.scene-container {
     width: 400px;
     /* background: #000; */
     /* background: #f1ef6e; */
@@ -21,16 +20,44 @@
     justify-content: center;
 }
 
-.cercle {
+/* .cercle {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     background: #f1ef6e;
     margin-block: auto;
-}
+} */
 
 .scene {
     width: 100%;
     height: 350px;
     /* background: #f1ef6e; */
+}
+
+@media (max-width: 1220px) {
+    .accroche {
+        width: 90%;
+    }
+
+    .scene-container {
+        padding-top: 30px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 810px) {
+    .accroche {
+        width: 100%;
+    }
+
+    .accroche h1, .accroche a {
+        display: block;
+        text-align: center;
+    }
+
+    .accroche p {
+        text-align: justify;
+        hyphens: auto;
+    }
+
 }

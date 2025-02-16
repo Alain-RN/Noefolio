@@ -4,6 +4,7 @@
 }
 
 .skill-slider-container {
+
     position: relative;
     /* background: rebeccapurple; */
     display: flex;
@@ -12,7 +13,7 @@
 
 .skill-slider {
     border-radius: 4px;
-    max-width: calc(144px * 8 + 8px * 7);
+    max-width: calc(144px * var(--show-n-item) + 8px * (var(--show-n-item) - 1));
     display: flex;
     gap: 8px;
     overflow: hidden;
@@ -20,6 +21,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
+
 }
 
 .b {
