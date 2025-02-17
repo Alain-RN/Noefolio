@@ -1,5 +1,10 @@
+.nav-container {
+    margin-bottom: 38px;
+}
+
 .navbar {
-    padding-block: 32px;
+    margin-block: 38px;
+    /* background: red; */
     display: flex;
     max-width: var(--max-width);
     margin-inline: auto;

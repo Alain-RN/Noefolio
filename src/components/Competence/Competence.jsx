@@ -28,9 +28,9 @@ export default function Competence() {
 
   return (
     <div className="e skill-container">
-      <h2 className="skill-title">Competence</h2>
+      {/* <h2 className="skill-title">Competence</h2> */}
       <div className="skill" >
-        <h2>Langage de programation</h2>
+        <h2>Outils et Langage</h2>
         <div className="skill-slider-container">
           <BiChevronLeft className="b l" size={28} onClick={handleButtonLeft}/>
           <BiChevronRight className="b r" size={28} onClick={handleButtonRight}/>

@@ -1,10 +1,17 @@
 .banniere {
     max-width: var(--max-width);
     margin-inline: auto;
-    padding-block: 48px;
+    /* background: rebeccapurple; */
+    /* margin-block: 48px; */
+    padding-block: 32px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.banniere p {
+    font-size: var(--p);
+    line-height: 22px;
 }
 
 .accroche {
@@ -29,6 +36,7 @@
 } */
 
 .scene {
+    /* background: rebeccapurple; */
     width: 100%;
     height: 350px;
     /* background: #f1ef6e; */
@@ -60,4 +68,19 @@
         hyphens: auto;
     }
 
+}
+
+@media (max-width: 428px) {
+    .banniere p {
+        /* background: rebeccapurple; */
+        padding-block: 16px;
+    }
+
+    .scene-container {
+        padding-top: 0px; 
+    }
+
+    .scene {
+        height: 300px;
+    }
 }

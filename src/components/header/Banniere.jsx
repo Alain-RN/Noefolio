@@ -26,7 +26,7 @@ export default function Banniere() {
           mes créations et embarquez pour un voyage où la technologie et
           l’imagination n’ont aucune frontière.
         </p>
-        <a href="#projects">Explorer mes projets</a>
+        {/* <a href="#projects">Explorer mes projets</a> */}
       </div>
       <div className="scene-container">
         {/* <div className="cercle">

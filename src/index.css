@@ -31,7 +31,7 @@ h2 {
 
 p {
   font-family: "funnel";
-  font-size: 20px;
+  font-size: var(--p);
   text-align: justify;
   hyphens: auto;
 }
@@ -40,6 +40,7 @@ p {
   --show-n-item : 8;
   --max-width : 1278px;
   --h1 : 42px;
+  --p : 20px;
   background: #000311;
   position: relative;
 }
@@ -74,7 +75,8 @@ p {
 @media (max-width: 450px) {
   :root {
     --show-n-item : 2;
-    --h1 : 28px
+    --h1 : 28px;
+    --p : 16px;
   }
 }
 
