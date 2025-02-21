@@ -5,16 +5,35 @@ import Banniere from './components/header/Banniere'
 // import Fusee from './components/Animation/Fusee'
 import Presentation from './components/presentation/Presentation.jsx'
 import Competence from './components/Competence/Competence.jsx'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [isTimeElapsed, setIsTimeElapsed] = useState(false);
+
+  const timeElapsed = ()=> {
+    setIsTimeElapsed( e => !e )
+  }
+  useEffect(()=> {
+    const timer = setTimeout(() => {
+      timeElapsed()
+    }, 16000);
+    return () => {
+      clearTimeout(timer);
+    };
+  });
 
   return (
     <div className='app'>
-      <NavBar></NavBar>
-      <Banniere></Banniere>
-      <Competence></Competence>
+      {
+        <div className="element-page" style={{opacity:!isTimeElapsed?"0":"1"}}>
+          <NavBar></NavBar>
+          <Banniere></Banniere>
+          <Competence></Competence>
+          <Competence></Competence>
+        </div>
+      }
 
-      {/* <Presentation></Presentation> */}
+      {!isTimeElapsed && <Presentation></Presentation>} 
       <Bg_etoile></Bg_etoile>
     </div>
   )

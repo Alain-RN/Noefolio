@@ -4,3 +4,7 @@
 .e {
     padding-inline: 32px;
 }
+
+.element-page {
+    transition: ease-in-out 2s ;
+}

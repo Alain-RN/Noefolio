@@ -10,7 +10,7 @@ export default function Presentation() {
 
     const timer = setTimeout(() => {
         document.body.style.overflow = 'auto';
-    }, 15000);
+    }, 16000);
 
     return () => {
         clearTimeout(timer);

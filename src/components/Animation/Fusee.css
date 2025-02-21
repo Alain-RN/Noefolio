@@ -46,8 +46,7 @@
     left: 50vw;
     bottom: -110px;
     transform: translateX(-30px);
-    animation: decolage 2.8s ease-in-out forwards, stable 0.6s 2.8s ease-in-out alternate infinite;
-    /* , leave 0.8s 8s ease-in-out forwards */
+    animation: decolage 2.8s ease-in-out forwards, stable 0.6s 2.8s ease-in-out alternate infinite,leave 0.8s 8s ease-in-out forwards
 }
 
 .fusee {
@@ -57,7 +56,7 @@
 
 @media (max-width: 1180px) {
     .fusee-container {
-        animation: decolage1 2.8s ease-in-out forwards, stable1 0.6s 2.8s ease-in-out alternate infinite;
+        animation: decolage1 2.8s ease-in-out forwards, stable1 0.6s 2.8s ease-in-out alternate infinite,leave1 0.8s 8s ease-in-out forwards;
     }
 }
 
