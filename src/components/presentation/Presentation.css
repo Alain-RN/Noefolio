@@ -1,3 +1,12 @@
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .presentation-container {
     top: 0;
     position: fixed;
@@ -12,19 +21,20 @@
     flex-direction: column;
     gap: 20px;
     margin-inline: 24px;
+    animation: hide 1s 17s ease-in-out forwards;
 }
 
 .text1 {
     font-size: 2em;
     opacity: 0;
-    animation: textAnimation 2s 12.5s ease-in-out forwards;
+    animation: textAnimation 2s 11.5s ease-in-out forwards;
     text-align: center;
 }
 
 .text2 {
     font-size: 2em;
     opacity: 0;
-    animation: textAnimation 2s 14.5s ease-in-out forwards;
+    animation: textAnimation 2s 13.5s ease-in-out forwards;
     text-align: center;
 }
 

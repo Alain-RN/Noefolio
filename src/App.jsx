@@ -16,18 +16,18 @@ function App() {
   useEffect(()=> {
     const timer = setTimeout(() => {
       timeElapsed()
-    }, 16000);
+    }, 18000);
     return () => {
       clearTimeout(timer);
     };
-  });
+  }, []);
 
   return (
     <div className='app'>
       {
-        <div className="element-page" style={{opacity:!isTimeElapsed?"0":"1"}}>
+        <div className="element-page" style={{opacity: !isTimeElapsed?"0":"1"}}>
           <NavBar></NavBar>
-          <Banniere></Banniere>
+          <Banniere isTimeElapsed = {isTimeElapsed}></Banniere>
           <Competence></Competence>
           <Competence></Competence>
         </div>

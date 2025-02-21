@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 // import Fusee3D from "../Model3D/Fusee3D";
 import * as THREE from 'three'
 
-export default function Banniere() {
+export default function Banniere({isTimeElapsed}) {
 
   const sphere = new THREE.SphereGeometry(2, 32, 32)
   const sphereColor = new THREE.MeshBasicMaterial({
@@ -17,7 +17,7 @@ export default function Banniere() {
   return (
     <div className="e banniere">
       <div className="accroche">
-        <AnimationH1 text="Prêt à explorer l'infini du développement web ?"></AnimationH1>
+        {isTimeElapsed && <AnimationH1 text="Prêt à explorer l'infini du développement web ?"></AnimationH1>}
         {/* <h1>Prêt à explorer l'infini du développement web ?</h1> */}
         <p>
           L'univers du code est vaste et rempli de possibilités infinies. À
