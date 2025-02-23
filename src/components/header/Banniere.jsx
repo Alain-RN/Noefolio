@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 // import Fusee3D from "../Model3D/Fusee3D";
 import * as THREE from 'three'
 
-export default function Banniere({isTimeElapsed}) {
+export default function Banniere({ isTimeElapsed }) {
 
   const sphere = new THREE.SphereGeometry(2, 32, 32)
   const sphereColor = new THREE.MeshBasicMaterial({
@@ -32,6 +32,7 @@ export default function Banniere({isTimeElapsed}) {
         {/* <div className="cercle">
 
         </div> */}
+      
         <div className="scene">
           <Canvas camera={{ position: [0, 4, 0], near: 0.1, far: 1000 }}>
             <ambientLight intensity={0.1} />

@@ -29,7 +29,7 @@ function App() {
           <NavBar></NavBar>
           <Banniere isTimeElapsed = {isTimeElapsed}></Banniere>
           <Competence></Competence>
-          <Competence></Competence>
+          {/* <Competence></Competence> */}
         </div>
       }
 
