@@ -4,6 +4,7 @@
 
 .navbar {
     margin-block: 38px;
+    position: relative;
     /* background: red; */
     display: flex;
     max-width: var(--max-width);
@@ -11,6 +12,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.me {
+    background: rgba(67, 64, 68, 0.425);
+    position: absolute;
+    text-align: center;
+    right: 0;
+    top: 85px;
+    width: 350px;
+    overflow: hidden;
+    z-index: 100;
+    transition: 0.6s ease-in-out;
+}
+
+.me p {
+    text-align: center;
+    background: rgba(102, 51, 153, 0.521);
+    width: fit-content;
+    padding-block: 6px;
+    margin-inline: 16px;
 }
 
 .logo {
