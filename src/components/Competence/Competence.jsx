@@ -2,11 +2,17 @@ import "./Competence.css"
 import { skills } from "./Data_skills"
 import CardSkills from "./CardSkills"
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 
 
 export default function Competence() {
+
+  const [skill, setSkill] = useState({});
+
+  const handleSkill = (s) => {
+    setSkill(s)
+  }
 
   const refSlider = useRef(null);
   const by = 144;
@@ -37,12 +43,24 @@ export default function Competence() {
           <div className="skill-slider" id="skill-slider" ref={refSlider}>
             {
               skills.map((skill, index) => (
-                <CardSkills key={index} nom={skill.name} image={skill.image} level={skill.level} />
+                <CardSkills 
+                  key={index} 
+                  nom={skill.name} 
+                  image={skill.image} 
+                  level={skill.level}
+                  onClick = {()=>{handleSkill(skill)}}
+                  />
               ))
             }
           </div>
+
         </div>
       </div>
+
+      <div className="show-more">
+        <p>{skill.name == null? "" :skill.name}{skill.level == null? "" : "("+skill.level+"%)"}</p>
+      </div>
+
     </div>
   )
 }

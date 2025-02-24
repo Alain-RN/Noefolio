@@ -48,6 +48,12 @@
     right: 0;
 }
 
+.show-more {
+    width: fit-content;
+    /* background: red; */
+    margin-inline: auto;
+}
+
 @media (max-width: 428px) {
 
     .skill h2 {
