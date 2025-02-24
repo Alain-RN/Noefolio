@@ -1,0 +1,48 @@
+.about-container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    margin-bottom: 58px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.about {
+    display: flex;
+
+}
+
+.me-img {
+    flex: 0.8;
+    height: 200px;
+    background: rebeccapurple;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2.4rem;
+}
+
+@media (max-width: 730px) {
+    .about-container {
+        flex-direction: column-reverse;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    
+    .me-img {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 428px) {
+    .about-text h2 {
+        text-align: center;
+    }    
+}
