@@ -68,6 +68,10 @@
 }
 
 @media (max-width: 472px) {
+
+    .me {
+        width: 100%;
+    }
     .logo span {
         font-size: 20px;
     }
