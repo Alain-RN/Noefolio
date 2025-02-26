@@ -3,8 +3,7 @@ import { skills } from "./Data_skills"
 import CardSkills from "./CardSkills"
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
 import { useRef, useState } from "react"
-
-
+import Diagram from "./Diagram"
 
 export default function Competence() {
 
@@ -60,7 +59,8 @@ export default function Competence() {
       <div className="show-more">
         <p>{skill.name == null? "" :skill.name}{skill.level == null? "" : "("+skill.level+"%)"}</p>
       </div>
-
+      
+      <Diagram></Diagram>
     </div>
   )
 }
