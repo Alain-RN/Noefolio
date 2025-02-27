@@ -28,20 +28,20 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    height: 0%;
+    /* height: 0%; */
     width: 44px;
-    animation: increase-height 2s ease-in-out forwards; /* Animation de la hauteur */
-    --level: 0%;
+    /* animation: increase-height 2s ease-in-out forwards;  */
+    /* --level: 0%; */
 }
 
-@keyframes increase-height {
+/* @keyframes increase-height {
     0% {
       height: 0%;
     }
     100% {
       height: var(--level);
     }
-}
+} */
 
 @media (max-width : 1220px ) {
     .bar {
