@@ -6,15 +6,14 @@ export default function Bar({ color, level, name }) {
   return (
     <div style={{ height: `${level}%` }}>
       <div
+        className="bar"
         style={{
           background: color,
           height: "100%",
-          width: "44px",
           borderRadius: "24px",
-          margin: "auto",
-        }}
-        className="bar"
+          marginInline: "auto",
 
+        }}
       >
         <h2
           className="tool-name"
