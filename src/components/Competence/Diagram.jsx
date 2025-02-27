@@ -8,7 +8,7 @@ function Diagram() {
     <div className="diagram" style={{gridTemplateColumns: `repeat(${skills.length}, 1fr)`}}>
         {
             skills.map((skill, index) => (
-                <Bar key={index} color={skill.color} level={skill.level} name={skill.name}/>
+                <Bar className={``} key={index} color={skill.color} level={skill.level} name={skill.name}/>
             ))
         }
     </div>

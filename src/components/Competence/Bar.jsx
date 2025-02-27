@@ -4,7 +4,7 @@ import "./Bar.css";
 export default function Bar({ color, level, name }) {
 
   return (
-    <div style={{ height: `${level}%` }}>
+    <div style={{ height: `${level}%` }} {...props}>
       <div
         className="bar"
         style={{

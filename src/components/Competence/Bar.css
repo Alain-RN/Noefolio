@@ -8,6 +8,8 @@
     }
 } */
 
+
+
 .tool-name {
     writing-mode: vertical-rl;
     font-size: 20px;
@@ -26,8 +28,19 @@
     display: flex;
     justify-content: center;
     align-items: center; 
+    height: 0%;
     width: 44px;
-    /* animation: progress-bar 1s ease-in-out; */
+    animation: increase-height 2s ease-in-out forwards; /* Animation de la hauteur */
+    --level: 0%;
+}
+
+@keyframes increase-height {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: var(--level);
+    }
 }
 
 @media (max-width : 1220px ) {
