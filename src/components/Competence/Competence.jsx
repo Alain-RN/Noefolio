@@ -3,11 +3,12 @@ import { skills } from "./Data_skills"
 import CardSkills from "./CardSkills"
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
 import { useRef, useState } from "react"
-import Diagram from "./Diagram"
+import Capacity from "./Capacity"
 
 export default function Competence() {
 
-  const [skill, setSkill] = useState({});
+
+  const [skill, setSkill] = useState(skills[0]);
 
   const handleSkill = (s) => {
     setSkill(s)
@@ -55,12 +56,9 @@ export default function Competence() {
 
         </div>
       </div>
-
-      <div className="show-more">
-        <p>{skill.name == null? "" :skill.name}{skill.level == null? "" : "("+skill.level+"%)"}</p>
-      </div>
       
-      <Diagram></Diagram>
+      <Capacity skill={skill} ></Capacity>
+
     </div>
   )
 }

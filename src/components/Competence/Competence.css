@@ -52,6 +52,7 @@
     width: fit-content;
     /* background: red; */
     margin-inline: auto;
+    margin-bottom: -8px;
 }
 
 @media (max-width: 428px) {

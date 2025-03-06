@@ -1,0 +1,19 @@
+.capacity {
+    margin: 38px 0;
+}
+
+#c {
+    /* width: 60%; */
+    /* min-width: 0%;  */
+    width: 0%;
+    /* background: rebeccapurple; */
+    display: flex;
+    justify-content: right;
+    transition: width 1.5s ease-in-out;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#c.active {
+    width: 0%;
+}
