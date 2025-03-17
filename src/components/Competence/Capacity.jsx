@@ -9,8 +9,10 @@ function Capacity({ skill }) {
         </div>
 
         <div style={{width: "100%", background: "rgba(48, 48, 48, 0.34)", borderRadius: "10px"}}>
-            <div id="c" className="active" style={{background: skill.color ? skill.color : "", width: skill.level+"%"}}>
-                <span>C</span>
+            <div id="c" className="active" style={{background: skill.color ? skill.color : "", width: skill.level+"%", position:"relative"}}>
+                <span>
+                  <img src="/Animation_img/rocket.png" className="fusee-capacity" alt="Fusée qui décole et accélere" />
+                </span>
             </div>
         </div>
     </div>
