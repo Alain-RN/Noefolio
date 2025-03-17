@@ -1,0 +1,16 @@
+.project {
+    max-width: var(--max-width);
+    margin: auto;
+    /* background: #000; */
+    margin-top:82px;
+}
+.canvas-project {
+    width: 100%;
+    /* background: #000; */
+    height: 100%;
+}
+
+.project h2 {
+    font-size: 1.8rem;
+    margin-bottom: 36px;
+}

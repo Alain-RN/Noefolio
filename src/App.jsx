@@ -6,6 +6,7 @@ import Banniere from './components/header/Banniere'
 import Presentation from './components/presentation/Presentation.jsx'
 import Competence from './components/Competence/Competence.jsx'
 import About from './components/About/About.jsx'
+import Project from './components/project/Project.jsx'
 import { useEffect, useState } from 'react'
 
 function App() {
@@ -31,11 +32,12 @@ function App() {
           <Banniere isTimeElapsed = {isTimeElapsed}></Banniere>
           <About></About>
           <Competence></Competence>
+          <Bg_etoile></Bg_etoile>
+          <Project></Project>
         </div>
       }
 
       {!isTimeElapsed && <Presentation></Presentation>} 
-      <Bg_etoile></Bg_etoile>
     </div>
   )
 }
