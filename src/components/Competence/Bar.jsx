@@ -12,7 +12,6 @@ export default function Bar({ color, level, name }) {
           height: "100%",
           borderRadius: "24px",
           marginInline: "auto",
-
         }}
       >
         <h2

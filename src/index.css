@@ -20,6 +20,10 @@ body {
   color: #ffffff;
 }
 
+h1, h2 {
+  color: #00ffffee;
+}
+
 h1 {
   font-family: "Audiwide";
   font-size: 48px;
@@ -41,8 +45,8 @@ p {
   --max-width : 1278px;
   --h1 : 42px;
   --p : 20px;
-  background: #000311;
-  position: relative;
+  background: linear-gradient(180deg, #0f1013, #0b0c10);
+
 }
 
 @media (max-width: 1650px) {

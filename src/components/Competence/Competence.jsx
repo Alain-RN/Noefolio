@@ -53,10 +53,8 @@ export default function Competence() {
               ))
             }
           </div>
-
         </div>
       </div>
-      
       <Capacity skill={skill} ></Capacity>
 
     </div>

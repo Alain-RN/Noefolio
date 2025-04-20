@@ -1,53 +1,55 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import "./project.css"
 
 const projects = [
-  { x: 100, y: 150 },
-  { x: 300, y: 250 },
-  { x: 400, y: 450 },
+  {
+    id: 1,
+    title: "Mission Apollo",
+    tech: "React + Node.js",
+    status: "Mission accomplie",
+    description: "Un tableau de bord interactif pour suivre les satellites en orbite.",
+  },
+  {
+    id: 2,
+    title: "Voyager X",
+    tech: "Python + Flask",
+    status: "Mission en cours",
+    description: "Une IA qui pilote un rover virtuel sur Mars.",
+  },
+  {
+    id: 3,
+    title: "Nebula Chat",
+    tech: "Socket.io + Express",
+    status: "En orbite",
+    description: "Un chat spatial en temps réel pour les astronautes.",
+  },
 ];
-
 export default function Project() {
 
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = "white";
-      ctx.lineWidth = 2;
-      ctx.fillStyle = "white";
-
-      // Dessiner les lignes (chaque point est relié au précédent uniquement)
-      for (let i = 1; i < projects.length; i++) {
-        ctx.beginPath();
-        ctx.moveTo(projects[i - 1].x, projects[i - 1].y);
-        ctx.lineTo(projects[i].x, projects[i].y);
-        ctx.stroke();
-      }
-
-      // Dessiner les cercles
-      projects.forEach(({ x, y }) => {
-        ctx.beginPath();
-        ctx.arc(x, y, 10, 0, Math.PI * 2);
-        ctx.fill();
-      });
-    }
-
-    draw();
-  }, []);
+  const [selected, setSelected] = useState(projects[0]);
 
   return (
-    <div className="e project">
-      <h2>Projet</h2>
-      <canvas ref={canvasRef} className="canvas-project">
-      </canvas>
+    <div className="e">
+      <div className="dashboard">
+      <div className="sidebar">
+        <h2>Cockpit</h2>
+        {projects.map((proj) => (
+          <button
+            key={proj.id}
+            className={`project-btn ${selected.id === proj.id ? "active" : ""}`}
+            onClick={() => setSelected(proj)}
+          >
+            {proj.title}
+          </button>
+        ))}
+      </div>
+      <div className="project-details">
+        <h2>{selected.title}</h2>
+        <p><strong>Technologie :</strong> {selected.tech}</p>
+        <p><strong>Statut de la mission :</strong> {selected.status}</p>
+        <p><strong>Briefing :</strong> {selected.description}</p>
+      </div>
     </div>
-  )
+    </div>
+  );
 }

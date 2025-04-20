@@ -14,7 +14,7 @@ export default function NavBar() {
         <div className='navbar'>
           <div className="logo">
             <img src="logo.png" alt="Logo-noefolio" />
-            <span>NOEFOLIO</span>
+            <span style={{"color":" #00ffffee"}}>NOEFOLIO</span>
           </div>
           <div className="profil" onClick={handleShowDropDown}>
             <img src="/astro-profile.png" alt="" />
