@@ -4,18 +4,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #111727;
+    background-color: #11172770;
     flex: 0 0 144px;
     scroll-snap-align: start;
     cursor: pointer;
+    border: 1px solid #00ffffb4;
+
 }
 
-.card-skill:hover {
+/* .card-skill:hover {
     transform: translateY(-12px);
     box-shadow: 0 12px 20px rgba(0,0,0,0.2);
     z-index: 10;
     position: relative;
-}
+} */
 
 .card-skill img{
     width: 130px;

@@ -14,4 +14,3 @@ export const skills = [
   { name: "Git", image: "/images/github.svg", level: 85, color: "rgb(0, 0, 0)" },  // Black
   { name: "Linux", image: "/images/linux.svg", level: 70, color: "rgb(0, 0, 0)" }  // Black
 ];
-  

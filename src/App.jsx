@@ -32,8 +32,8 @@ function App() {
           <Banniere isTimeElapsed = {isTimeElapsed}></Banniere>
           <About></About>
           <Competence></Competence>
-          <Bg_etoile></Bg_etoile>
           <Project></Project>
+          <Bg_etoile></Bg_etoile>
         </div>
       }
 
